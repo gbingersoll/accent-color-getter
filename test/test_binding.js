@@ -3,7 +3,7 @@ const assert = require('assert');
 
 assert(AccentColorGetter, 'The expected module is undefined');
 
-function testBasic() {
+function testOnWindows() {
   const instance = new AccentColorGetter();
   const systemColors = instance.getSystem();
   [
@@ -55,6 +55,11 @@ function testBasic() {
   }
 }
 
-assert.doesNotThrow(testBasic, undefined, 'testBasic threw an expection');
+if (process.platform == 'win32') {
+  assert.doesNotThrow(testBasic, undefined, 'testBasic threw an expection');
+} else {
+  const instance = new AccentColorGetter();
+  assert.throws(instance.getSystem, undefined, 'testBasic threw an expection');
+}
 
 console.log('Tests passed- everything looks OK!');

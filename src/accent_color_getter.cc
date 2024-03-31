@@ -1,13 +1,17 @@
 #include "accent_color_getter.h"
+#ifdef WIN32
 #include <winrt/Windows.UI.ViewManagement.h>
+#endif
 
 #include <iomanip>
 #include <sstream>
 
 using namespace Napi;
 
+#ifdef WIN32
 using namespace winrt;
 using namespace Windows::UI::ViewManagement;
+#endif
 
 AccentColorGetter::AccentColorGetter(const Napi::CallbackInfo &info) : ObjectWrap(info)
 {
@@ -32,6 +36,7 @@ Napi::Value AccentColorGetter::Get(const Napi::CallbackInfo &info)
         return env.Null();
     }
 
+#ifdef WIN32
     const char *color_names[] = {
         "Background",
         "Foreground",
@@ -87,6 +92,11 @@ Napi::Value AccentColorGetter::Get(const Napi::CallbackInfo &info)
     }
 
     return colorSet;
+#else
+    Napi::TypeError::New(env, "Getting system accent colors only works on Windows.")
+        .ThrowAsJavaScriptException();
+    return env.Null();
+#endif
 }
 
 Napi::Function AccentColorGetter::GetClass(Napi::Env env)
