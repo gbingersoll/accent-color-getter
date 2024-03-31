@@ -1,0 +1,30 @@
+{
+  "main": "lib/binding.js",
+  "dependencies": {
+    "node-addon-api": "^1.1.0"
+  },
+  "scripts": {
+    "test": "node --napi-modules ./test/test_binding.js"
+  },
+  "gypfile": true,
+  "name": "accent-color-getter",
+  "version": "0.1.0",
+  "description": "Native Addon to get Windows accent color and variations",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbingersoll/accent-color-getter.git"
+  },
+  "keywords": [
+    "WinUI",
+    "Electron"
+  ],
+  "author": {
+    "name": "Greg Ingersoll",
+    "url": "https://github.com/gbingersoll"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gbingersoll/accent-color-getter/issues"
+  },
+  "homepage": "https://github.com/gbingersoll/accent-color-getter#readme"
+}
