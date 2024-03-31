@@ -8,7 +8,7 @@
   },
   "gypfile": true,
   "name": "accent-color-getter",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Native Addon to get Windows accent color and variations",
   "repository": {
     "type": "git",

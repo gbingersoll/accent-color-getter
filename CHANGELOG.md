@@ -7,8 +7,9 @@ to structure this file.
 
 ## [Unreleased]
 
-### Added
+## [1.0.0] - 2024-03-31
 
-### Changed
+Initial release
 
-### Fixed
+[unreleased]: https://github.com/gbingersoll/accent-color-getter/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/gbingersoll/accent-color-getter/releases/tag/v1.0.0
